@@ -2,10 +2,25 @@ import mongoose from 'mongoose';
 
 const labSchema = new mongoose.Schema(
   {
-    //subject
-    //subject code
-    //faculty taking the lab [Faculty schema ref]
-    //students [Student]
+    labName: {
+      type: String,
+      required: true
+    },
+    facultyId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Faculty',
+      required: true
+    },
+    students: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Student'
+      }
+    ],
+    joinCode: {
+      type: String,
+      unique: true
+    }
     
   },
   {
@@ -13,4 +28,12 @@ const labSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model('Faculty', facultySchema);
+// Generate random join code before saving
+labSchema.pre('save', function (next) {
+  if (!this.joinCode) {
+    this.joinCode = Math.random().toString(36).substring(2, 8).toUpperCase();  // Example: "A1B2C3"
+  }
+  next();
+});
+
+export default mongoose.model('Lab', labSchema);

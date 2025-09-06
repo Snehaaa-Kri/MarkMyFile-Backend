@@ -6,7 +6,6 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Name is required'],
       trim: true,
-      minlength: [2, 'Name must be at least 2 characters long']
     },
     email: {
       type: String,
@@ -25,25 +24,10 @@ const userSchema = new mongoose.Schema(
       enum: ['student', 'faculty'],
       default: 'student'
     },
-    college_name: { //will fetch all the college info by this
+    collegeName: { //will fetch all the college info by this
         type: String,
         required: true
-    },
-    student_id: {
-        type: mongoose.Types.ObjectId(),
-        ref: "Student"
-    },
-    college_id: {
-        type: mongoose.Types.ObjectId(),
-        ref: "College"
-    },
-    faculty_id: {
-        type: mongoose.Types.ObjectId(),
-        ref: "Faculty"
     }
-    //student id
-    //college id
-    //faculty id
   },
   {
     timestamps: true // automatically adds createdAt & updatedAt
