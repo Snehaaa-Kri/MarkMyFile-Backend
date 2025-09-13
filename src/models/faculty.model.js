@@ -7,6 +7,10 @@ const facultySchema = new mongoose.Schema(
       ref: 'User',
       required: true
     },
+    profileImage: {
+      type: String,
+      required: true
+    },
     department: {
       type: String,
       required: true

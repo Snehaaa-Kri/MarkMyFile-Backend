@@ -7,6 +7,10 @@ const collegeSchema = new mongoose.Schema(
       required: [true, 'College name is required'],
       trim: true
     },
+    profileImage: {
+      type: String,
+      required: true
+    },
     code: {
       type: String,
       required: [true, 'College code is required'],

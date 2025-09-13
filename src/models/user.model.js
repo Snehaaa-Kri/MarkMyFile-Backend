@@ -27,6 +27,18 @@ const userSchema = new mongoose.Schema(
     collegeName: { //will fetch all the college info by this
         type: String,
         required: true
+    },
+    studentId: {
+      type: mongoose.Types.ObjectId,
+      ref: "Student"
+    },
+    facultyId: {
+      type: mongoose.Types.ObjectId,
+      ref: "Faculty"
+    },
+    collegeId: {
+      type: mongoose.Types.ObjectId,
+      ref: "College"
     }
   },
   {

@@ -7,6 +7,10 @@ const studentSchema = new mongoose.Schema(
       ref: 'User',
       required: true
     },
+    profileImage: {
+      type: String,
+      required: true
+    },
     rollNumber: {
       type: String,
       required: true,
