@@ -1,5 +1,5 @@
 import express from "express";
-import resourceController from "../controllers/resourceController.js";
+import resourceController from "../controllers/resource.controller.js";
 import { validateJWT } from "../middlewares/auth.middleware.js";
 
 const router = express.Router();

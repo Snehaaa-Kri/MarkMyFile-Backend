@@ -4,7 +4,7 @@ import UserModel from "../models/user.model.js";
 import crypto from "crypto";
 
 const labController = {
-    // Create a new lab
+    // Create a new lab - teacher
     createLab: async (req, res) => {
         try {
             const { labName } = req.body;
@@ -38,7 +38,7 @@ const labController = {
         }
     },
 
-    // Update lab
+    // Update lab - teacher
     updateLab: async (req, res) => {
         try {
             const { id } = req.params;
@@ -68,7 +68,7 @@ const labController = {
         }
     },
 
-    // Get lab by ID
+    // Get lab by ID - teacher
     getLabById: async (req, res) => {
         try {
             const { id } = req.params;
@@ -87,7 +87,7 @@ const labController = {
         }
     },
 
-    // Get all labs
+    // Get all labs - teacher
     getAllLabs: async (req, res) => {
         try {
             const labs = await LabModel.find().populate("facultyId", "department designation");
@@ -101,7 +101,7 @@ const labController = {
         }
     },
 
-    // Delete lab
+    // Delete lab - teacher
     deleteLab: async (req, res) => {
         try {
             const { id } = req.params;

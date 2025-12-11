@@ -1,7 +1,7 @@
 import ResourceModel from "../models/resource.model.js";
 
 const resourceController = {
-    // Create a new resource
+    // Create a new resource - teacher
     createResource: async (req, res) => {
         try {
             const { title, description, type, link } = req.body;
@@ -24,7 +24,7 @@ const resourceController = {
         }
     },
 
-    // Update a resource
+    // Update a resource - teacher
     updateResource: async (req, res) => {
         try {
             const { id } = req.params;
@@ -43,7 +43,7 @@ const resourceController = {
         }
     },
 
-    // Get resource by ID
+    // Get resource by ID - in assignment - both student and teacher
     getResourceById: async (req, res) => {
         try {
             const { id } = req.params;
@@ -59,7 +59,7 @@ const resourceController = {
         }
     },
 
-    // Get all resources
+    // Get all resources - not needed as such!
     getAllResources: async (req, res) => {
         try {
             const resources = await ResourceModel.find().populate("uploadedBy", "name email");
@@ -73,7 +73,7 @@ const resourceController = {
         }
     },
 
-    // Delete resource
+    // Delete resource - teacher
     deleteResource: async (req, res) => {
         try {
             const { id } = req.params;

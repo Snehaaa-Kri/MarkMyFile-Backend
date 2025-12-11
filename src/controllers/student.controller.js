@@ -61,7 +61,7 @@ const studentController = {
             const { rollNumber, batch, branch, name, collegeName } = req.body;
             //email can't be changed
 
-            // 2Build update data for Student
+            // Build update data for Student
             const studentUpdateData = { rollNumber, batch, branch };
             if (req.file && req.file.path) {
                 studentUpdateData.profileImage = req.file.path; // Cloudinary URL

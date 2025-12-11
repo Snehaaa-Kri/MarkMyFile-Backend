@@ -1,5 +1,5 @@
 import express from "express";
-import notificationRecipientController from "../controllers/notificationRecipientController.js";
+import notificationRecipientController from "../controllers/notificationRecipient.controller.js";
 import { validateJWT } from "../middlewares/auth.middleware.js";
 
 const router = express.Router();
